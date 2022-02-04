@@ -1,0 +1,378 @@
+//font
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+//reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .2s linear;
+    line-height: 1.2;
+}
+
+html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Alata', sans-serif;
+}
+
+.heading {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 3rem;
+    font-family: 'Josefin Sans', sans-serif;
+    color: hsl(0, 0%, 41%);
+}
+
+//header
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 2rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    .logo {
+        cursor: pointer;
+    }
+    .navbar {
+        a {
+            font-size: 1rem;
+            padding: 0 .75rem;
+            color: #fff;
+            text-transform: capitalize;
+        }
+    }
+    .toggler {
+        font-size: 3rem;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+    }
+}
+
+.home {
+    display: flex;
+    min-height: 80vh;
+    background: url(../images/desktop/image-hero.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    .content {
+        align-self: center;
+        margin: 0 8%;
+        h1 {
+            width: 30rem;
+            font-size: 3rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: #fff;
+            border: 3px solid #fff;
+            padding: 1rem 2rem;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    }
+}
+
+.careers {
+    margin: 8rem 8% 0;
+    position: relative;
+    .content {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 5rem 0 0 5rem;
+        max-width: 40rem;
+        background: white;
+        p {
+            color: hsl(0, 0%, 55%);
+            padding-top: 1.5rem;
+            line-height: 1.5;
+        }
+    }
+}
+
+.products {
+    margin: 8rem 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    .btn {
+        padding: .5rem 3rem;
+        border: 1px solid #000000;
+        width: max-content;
+        justify-self: right;
+        letter-spacing: 3px;
+    }
+    .gallery {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 2rem;
+        margin-top: 3rem;
+        .card {
+            margin: 0;
+            display: grid;
+            position: relative;
+            p {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-transform: uppercase;
+                color: white;
+                font-size: 2rem;
+                padding: 2rem;
+                font-weight: 300;
+                font-family: 'Josefin Sans', sans-serif;
+                width: 15rem;
+            }
+        }
+    }
+}
+
+//scroll header
+.scroll-header {
+    background-color: black;
+    box-shadow: 0 0 4px hsla(var(--hue-color), 64%, 15%, .15);
+}
+
+.support {
+    background: black;
+    .container {
+        margin: 0 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+        a {
+            color: white;
+        }
+        .links {
+            margin-top: 1rem;
+            a {
+                font-size: 1rem;
+                margin-right: 1rem;
+            }
+        }
+        .copyright {
+            color: hsl(0, 0%, 55%);
+            margin-top: 1rem;
+        }
+        .social {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            a {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width:1300px) {
+    .heading {
+        font-size: 2.75rem;
+    }
+    .careers {
+        img {
+            width: 60%;
+        }
+        .content {
+            padding: 4rem 0 0 4rem;
+            max-width: 35rem;
+            h1 {
+                font-size: 1.9rem;
+            }
+        }
+    }
+    .products {
+        .gallery {
+            .card {
+                img {
+                    width: 80%;
+                }
+                P {
+                    font-size: 1.5rem;
+                    width: 12rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1023px) {
+    header {
+        .fa-bars {
+            display: block;
+        }
+        .navbar {
+            position: absolute;
+            height: 100vh;
+            top: 0;
+            left: 100rem;
+            right: 0;
+            z-index: -1;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            a {
+                margin: 1rem 8%;
+                padding-top: 0.25rem;
+                color: #fff;
+                border: .1rem solid rgba(0, 0, 0, .1);
+                display: block;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+            }
+        }
+        .navbar.show-menu {
+            left: 0;
+            .header {
+                background: black;
+            }
+        }
+    }
+    .home {
+        height: 100vh;
+    }
+    .careers {
+        position: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 100%;
+        }
+        .content {
+            position: unset;
+            padding: 3rem 0 0;
+            text-align: center;
+            max-width: 100%;
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    }
+    .products {
+        grid-template-columns: 1fr;
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .btn {
+            grid-row-end: 4;
+            justify-self: center;
+            margin-top: 3rem;
+            font-size: 1.5rem;
+        }
+        .gallery {
+            grid-column: span 1;
+            grid-template-columns: 1fr;
+            .card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                picture {
+                    display: flex;
+                    flex: 1;
+                    img {
+                        flex: 1;
+                    }
+                }
+                p {
+                    font-size: 2.25rem;
+                    width: 17rem;
+                }
+            }
+        }
+    }
+    .support {
+        .container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            .links {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 2rem;
+                align-items: center;
+            }
+            .social {
+                justify-content: center;
+                font-size: 1.75rem;
+            }
+        }
+    }
+}
+
+@media(max-width:540px) {
+    .home {
+        .content {
+            h1 {
+                font-size: 2.75rem;
+                width: 25rem;
+            }
+        }
+    }
+    .products {
+        .gallery {
+            .card {
+                p {
+                    font-size: 1.75rem;
+                    width: 15rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:420px) {
+    header {
+        .logo {
+            img {
+                width: 90%;
+            }
+        }
+        .toggler {
+            font-size: 2.5rem;
+        }
+    }
+    .home {
+        .content {
+            h1 {
+                font-size: 2.2rem;
+                width: 20rem;
+            }
+        }
+    }
+    .products {
+        .btn {
+            font-size: 1.5rem;
+        }
+        .gallery {
+            .card {
+                p {
+                    width: 13rem;
+                    padding: .75rem;
+                }
+            }
+        }
+    }
+}
