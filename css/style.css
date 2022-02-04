@@ -61,6 +61,34 @@ header .navbar a {
   padding: 0 .75rem;
   color: #fff;
   text-transform: capitalize;
+  display: inline-block;
+  position: relative;
+}
+
+header .navbar a:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 2px;
+  bottom: -1rem;
+  left: .5rem;
+  margin-left: .75rem;
+  background-color: white;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+header .navbar a:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
 }
 
 header .toggler {
@@ -169,6 +197,14 @@ header .toggler {
   font-weight: 300;
   font-family: 'Josefin Sans', sans-serif;
   width: 15rem;
+}
+
+.products .gallery .card:hover img {
+  opacity: 0.3;
+}
+
+.products .gallery .card:hover p {
+  color: dimgray;
 }
 
 .scroll-header {

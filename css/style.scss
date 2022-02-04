@@ -54,6 +54,25 @@ header {
             padding: 0 .75rem;
             color: #fff;
             text-transform: capitalize;
+            display: inline-block;
+            position: relative;
+        }
+        a:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -1rem;
+            left: .5rem;
+            margin-left: .75rem;
+            background-color: white;
+            transform-origin: bottom center;
+            transition: transform 0.25s ease-out;
+        }
+        a:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom center;
         }
     }
     .toggler {
@@ -138,6 +157,14 @@ header {
                 font-weight: 300;
                 font-family: 'Josefin Sans', sans-serif;
                 width: 15rem;
+            }
+            &:hover {
+                img {
+                    opacity: 0.3;
+                }
+                p {
+                    color: hsl(0, 0%, 41%);
+                }
             }
         }
     }
